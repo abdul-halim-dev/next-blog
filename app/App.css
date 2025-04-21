@@ -1,0 +1,12 @@
+
+
+.circle{
+    display:flex;
+    width:70px;
+    height:70px;
+    align-items:center;
+    justify-items:center;
+    background:blue;
+    border-radius:100%;
+    animation:circle ;
+}

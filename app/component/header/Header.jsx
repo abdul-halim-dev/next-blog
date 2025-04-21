@@ -2,13 +2,13 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
-  
- 
-import { SignedIn, SignedOut, UserButton, SignInButton } from '@clerk/nextjs';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { useTheme } from 'next-themes';
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
  
 
 const Header = () => {
- 
+  const { theme, setTheme } = useTheme();
   return (
     <header className='w-full flex items-center justify-between shadow h-[90px] p-[20px] fixed top-0 left-0 right-0 z-50 bg-white '>
         <Link href={"/"} className='flex items-center justify-center' > <span className=' text-red-400 text-4xl font-bold circle'> AH </span> Travel  </Link>
@@ -46,7 +46,8 @@ const Header = () => {
           </SignedOut>
    
         </div>
-        <button> dark and light </button>
+        <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+        {theme === 'light' ?<FaSun/>:<FaMoon/>} </button>
     </header>
   )
 }

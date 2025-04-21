@@ -3,6 +3,7 @@ import Header from "@/app/component/header/Header";
 import "./globals.css";
 import './App.css'
 import { ClerkProvider } from "@clerk/nextjs";
+import { ThemeProvider } from "next-themes";
  
  
 
@@ -10,9 +11,9 @@ import { ClerkProvider } from "@clerk/nextjs";
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-    <html lang="en"  >
-      <body className="w-full relative">
-      
+    <html lang="en" suppressHydrationWarning >
+      <body className="w-full relativ ">
+      <ThemeProvider> 
       <Header/>
       <div className=" pt-[150px] w-full relative  h-screen flex items-center   ">
       
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
         </div>
 
       </div>
-     
+      </ThemeProvider>
       </body>
     </html>
     </ClerkProvider>

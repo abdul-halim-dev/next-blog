@@ -2,7 +2,7 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
-import { FaMoon, FaSun } from 'react-icons/fa';
+
 import { useTheme } from 'next-themes';
 import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
  
@@ -47,7 +47,7 @@ const Header = () => {
    
         </div>
         <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-        {theme === 'light' ?<FaSun/>:<FaMoon/>} </button>
+        {theme ==='light'?"light":"dark"} </button>
     </header>
   )
 }
